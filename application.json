@@ -1,0 +1,145 @@
+{
+  "application": {
+    "id": "TMS",
+    "title": "Task Management System",
+    "description": "Enterprise Task Management Application with Project and Team Management capabilities",
+    "icon": "task_alt",
+    "theme_color": "#2196F3",
+    "group": "Project Management",
+    "generated": true
+  },
+  "navigation": [
+    {
+      "id": "1",
+      "title": "Task Management",
+      "parent_id": "",
+      "icon_image": "assignment",
+      "description": "Task Management Activities",
+      "obj_name": "",
+      "obj_type": "-",
+      "menu_path": "TMS.1",
+      "functional_specs": ""
+    },
+    {
+      "id": "1.1",
+      "title": "Task Board",
+      "parent_id": "1",
+      "icon_image": "dashboard_customize",
+      "description": "Kanban board for task management",
+      "obj_name": "TMS_task_board",
+      "obj_type": "T",
+      "menu_path": "TMS.1.1.1",
+      "functional_specs": "Drag-drop interface for task management with status columns (Todo/In Progress/Review/Complete). Features: Create/Edit/Delete tasks, comments, attachments, subtasks. Fields: Title, Description, Priority, Status, Dates, Hours, Assignments"
+    },
+    {
+      "id": "2",
+      "title": "Project Management",
+      "parent_id": "",
+      "icon_image": "folder",
+      "description": "Project Management Activities",
+      "obj_name": "",
+      "obj_type": "-",
+      "menu_path": "TMS.2",
+      "functional_specs": ""
+    },
+    {
+      "id": "2.1",
+      "title": "Project Setup",
+      "parent_id": "2",
+      "icon_image": "add_box",
+      "description": "Project creation and configuration",
+      "obj_name": "TMS_project_setup",
+      "obj_type": "T",
+      "menu_path": "TMS.2.2.1",
+      "functional_specs": "Project creation interface with fields: Name, Description, Dates, Manager, Team, Status, Priority, Budget Hours. Features: Create/Edit/Archive projects, team assignment, task association"
+    },
+    {
+      "id": "3",
+      "title": "Team Management",
+      "parent_id": "",
+      "icon_image": "groups",
+      "description": "Team Management Activities",
+      "obj_name": "",
+      "obj_type": "-",
+      "menu_path": "TMS.3",
+      "functional_specs": ""
+    },
+    {
+      "id": "3.1",
+      "title": "Team Workload",
+      "parent_id": "3",
+      "icon_image": "person_add",
+      "description": "Team workload management",
+      "obj_name": "TMS_team_workload",
+      "obj_type": "T",
+      "menu_path": "TMS.3.3.1",
+      "functional_specs": "Workload management interface showing team capacity, task assignments, skills. Features: View capacity, reassign tasks, update skills, monitor workload"
+    },
+    {
+      "id": "4",
+      "title": "Dashboards",
+      "parent_id": "",
+      "icon_image": "dashboard",
+      "description": "Performance Dashboards",
+      "obj_name": "",
+      "obj_type": "-",
+      "menu_path": "TMS.4",
+      "functional_specs": ""
+    },
+    {
+      "id": "4.1",
+      "title": "Resource Dashboard",
+      "parent_id": "4",
+      "icon_image": "analytics",
+      "description": "Resource utilization metrics",
+      "obj_name": "TMS_resource_dashboard",
+      "obj_type": "D",
+      "menu_path": "TMS.4.4.1",
+      "functional_specs": "Dashboard showing resource utilization, workload distribution, task status, progress trends, and forecasts"
+    },
+    {
+      "id": "4.2",
+      "title": "Team Dashboard",
+      "parent_id": "4",
+      "icon_image": "person",
+      "description": "Individual performance metrics",
+      "obj_name": "TMS_team_dashboard",
+      "obj_type": "D",
+      "menu_path": "TMS.4.4.2",
+      "functional_specs": "Personal dashboard showing task status, deadlines, performance metrics, time tracking"
+    },
+    {
+      "id": "5",
+      "title": "Reports",
+      "parent_id": "",
+      "icon_image": "summarize",
+      "description": "System Reports",
+      "obj_name": "",
+      "obj_type": "-",
+      "menu_path": "TMS.5",
+      "functional_specs": ""
+    },
+    {
+      "id": "5.1",
+      "title": "Task Performance",
+      "parent_id": "5",
+      "icon_image": "assessment",
+      "description": "Task completion metrics",
+      "obj_name": "TMS_task_performance",
+      "obj_type": "R",
+      "menu_path": "TMS.5.5.1",
+      "functional_specs": "Report showing task metrics: ID, Title, Assignment, Dates, Status, Hours, Delays"
+    },
+    {
+      "id": "5.2",
+      "title": "Project Progress",
+      "parent_id": "5",
+      "icon_image": "trending_up",
+      "description": "Project progress metrics",
+      "obj_name": "TMS_project_progress",
+      "obj_type": "R",
+      "menu_path": "TMS.5.5.2",
+      "functional_specs": "Project progress report with completion rates, resource utilization, milestone status"
+    }
+  ]
+}

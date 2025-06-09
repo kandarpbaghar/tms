@@ -1,0 +1,271 @@
+
+            
+            
+            
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Functional Requirement Specification</title>
+                <style>
+                    body { font-family: Arial, sans-serif; line-height: 1.6; padding: 0px; }
+                    pre { padding: 10px; border-radius: 2px; white-space: pre-wrap; }
+                </style>
+            
+            
+                <h3>Functional Requirement Specification</h3>
+                <pre>FUNCTIONAL REQUIREMENT SPECIFICATION - TASK MANAGEMENT APPLICATION
+
+BUSINESS PROCESS AND FUNCTIONAL AREAS
+
+1. Task Management
+2. Project Management
+3. Team Management
+4. Performance Tracking
+5. Reporting and Analytics
+
+1. TASK MANAGEMENT
+
+Activity: Task Board Management
+- Description: Central interface for creating, viewing, and managing tasks with drag-drop functionality across different status columns
+
+Data Points:
+- Task ID (System generated)
+- Task Title
+- Description
+- Priority (High/Medium/Low)
+- Status (To Do/In Progress/Under Review/Completed)
+- Due Date
+- Assigned To
+- Created By
+- Created Date
+- Last Modified Date
+- Estimated Hours
+- Actual Hours
+- Attachments
+- Comments
+- Tags/Labels
+- Parent Task ID (for subtasks)
+
+Business Rules:
+- Task Title is mandatory
+- Due Date cannot be earlier than current date
+- Status change must follow workflow: To Do → In Progress → Under Review → Completed
+- Task cannot be marked complete if subtasks are pending
+- Actual hours cannot exceed estimated hours by more than 50% without approval
+
+Business Actions:
+- Create Task
+- Edit Task
+- Delete Task (only if status is 'To Do')
+- Move Task (drag-drop between status columns)
+- Add Comments
+- Upload Attachments
+- Create Subtask
+- Filter Tasks
+- Sort Tasks
+
+Additional Data Management:
+- Update project progress when task status changes
+- Notify assigned team member when task is created/modified
+- Log all status changes for audit trail
+
+2. PROJECT MANAGEMENT
+
+Activity: Project Setup and Monitoring
+- Description: Interface for creating and managing projects, associating tasks, and tracking progress
+
+Data Points:
+- Project ID (System generated)
+- Project Name
+- Description
+- Start Date
+- End Date
+- Project Manager
+- Team Members
+- Status (Planning/Active/On Hold/Completed)
+- Priority
+- Budget Hours
+- Consumed Hours
+- Completion Percentage
+- Client/Department
+
+Business Rules:
+- Project Name must be unique
+- End Date must be after Start Date
+- Project cannot be marked complete if active tasks exist
+- Team Members must be selected from active employees
+
+Business Actions:
+- Create Project
+- Edit Project
+- Archive Project
+- Associate Tasks
+- Assign Team Members
+- Track Progress
+
+Additional Data Management:
+- Auto-calculate completion percentage based on task status
+- Update resource allocation when team members are assigned/removed
+
+3. TEAM MANAGEMENT
+
+Activity: Team Workload Management
+- Description: Interface for managing team member assignments and workload
+
+Data Points:
+- Employee ID
+- Name
+- Department
+- Role
+- Skills
+- Current Task Count
+- Available Hours
+- Allocated Hours
+- Performance Rating
+
+Business Rules:
+- Cannot assign tasks exceeding available hours
+- Must maintain minimum 20% buffer in resource allocation
+- Task assignments must match skill requirements
+
+Business Actions:
+- View Team Capacity
+- Reassign Tasks
+- Update Skills
+- Monitor Workload
+
+4. REPORTING AND ANALYTICS
+
+Activity: Task Performance Report
+- Description: Detailed report showing task completion metrics
+- Report Type: Tabular with graphical representations
+- Criteria: Date Range, Project, Team Member, Status
+- Columns: Task ID, Title, Assigned To, Due Date, Status, Estimated vs Actual Hours, Delay (if any)
+
+Activity: Resource Utilization Dashboard
+- Role: Project Manager
+- Criteria: Time Period (Default: Current Month)
+- Visualizations:
+- Bar Chart: Team member workload
+- Pie Chart: Task status distribution
+- Line Graph: Project progress trend
+- Heat Map: Task completion efficiency
+- Information Display:
+- Resource utilization percentage
+- Overdue tasks count
+- Tasks completed on time
+- Average task completion time
+- Resource availability forecast
+
+Activity: Team Member Dashboard
+- Role: Team Member
+- Criteria: None (Shows personal tasks by default)
+- Visualizations:
+- Kanban Board: Personal tasks by status
+- Timeline: Due dates visualization
+- Progress Meter: Personal productivity metrics
+- Information Display:
+- My Tasks summary
+- Upcoming deadlines
+- Personal performance metrics
+- Time tracking summary
+
+This specification provides a comprehensive framework for a basic task management application while maintaining consistency in entity naming and relationships across all functional areas.
+
+Activity: Project Progress Report
+- Description: Comprehensive report showing project-level progress and metrics
+- Report Type: Multi-section report with summary and details
+- Criteria: Project ID, Date Range, Team
+- Columns:
+- Summary Section: Project Name, Start Date, End Date, Overall Progress, Task Completion Rate, Resource Utilization
+- Task Section: Task Distribution by Status, Overdue Tasks, Critical Path Tasks
+- Team Section: Team Member Allocation, Individual Contribution Metrics
+- Timeline Section: Milestone Achievement Status, Planned vs Actual Progress
+
+Activity: Time Tracking Analysis
+- Description: Detailed analysis of time spent on tasks and projects
+- Report Type: Matrix report with drill-down capability
+- Criteria: Date Range, Project, Department, Team Member
+- Columns:
+- Time Period, Project Name, Task Category
+- Estimated Hours, Actual Hours, Variance
+- Billable Hours, Non-billable Hours
+- Productivity Index, Cost Impact
+
+Activity: Task Aging Report
+- Description: Report highlighting task duration and delays
+- Report Type: Tabular with status indicators
+- Criteria: Status, Age Range, Priority, Assigned To
+- Columns:
+- Task ID, Title, Age (days)
+- Original Due Date, Current Due Date
+- Delay Reason, Impact Level
+- Escalation Status, Action Required
+
+Activity: Quality Metrics Dashboard
+- Role: Quality Analyst/Project Manager
+- Criteria: Project, Time Period (Default: Last 3 months)
+- Visualizations:
+- Scatter Plot: Task Completion Time vs Quality Score
+- Trend Line: Defect Rate over Time
+- Stacked Bar: Rework Distribution
+- Information Display:
+- First-time-right percentage
+- Average review cycles
+- Quality deviation metrics
+- Rework effort analysis
+
+Activity: Risk Management Report
+- Description: Report identifying and tracking project and task risks
+- Report Type: Risk matrix with tracking elements
+- Criteria: Risk Level, Project, Status
+- Columns:
+- Risk ID, Description
+- Probability, Impact
+- Mitigation Plan
+- Status of Mitigation
+- Owner, Due Date
+- Related Tasks
+
+Activity: Capacity Planning Dashboard
+- Role: Resource Manager
+- Criteria: Department, Time Period (Default: Next Quarter)
+- Visualizations:
+- Gantt Chart: Resource Allocation Timeline
+- Stack Graph: Capacity vs Demand
+- Bubble Chart: Skill Distribution
+- Information Display:
+- Resource availability forecast
+- Skill gap analysis
+- Training needs
+- Hiring requirements
+
+Activity: Performance Trend Report
+- Description: Historical analysis of performance metrics
+- Report Type: Trend analysis with comparative metrics
+- Criteria: Time Period, Team, Individual
+- Columns:
+- Period
+- Task Completion Rate
+- Quality Metrics
+- Productivity Index
+- Peer Comparison
+- Growth Indicators
+
+Activity: Audit Trail Report
+- Description: Detailed log of all system activities and changes
+- Report Type: Chronological log with filtering
+- Criteria: Date Range, Activity Type, User, Entity Type
+- Columns:
+- Timestamp
+- User ID
+- Action Type
+- Entity Affected
+- Old Value, New Value
+- IP Address
+- System Notes
+
+This completes the functional requirement specification for the task management application, covering all major reporting and analytical needs while maintaining consistency with the core functional areas defined earlier. The specification provides a comprehensive framework for implementation while ensuring all stakeholder information needs are met through appropriate dashboards and reports.</pre>
+                <!-- Generation metadata: 2 attempts, 2 parts, validation score: 100 -->
+            
+            
+            
