@@ -32,6 +32,18 @@
         "join_table": "DEPARTMENTS",
         "join_column": "DEPT_ID"
       }
+    },
+    {
+      "object_name": "TMS_team_workload",
+      "form_no": "1",
+      "usage_type": "M",
+      "referred_columns": [
+        "COMPLETION_PCT",
+        "CONSUMED_HRS",
+        "PROJ_ID",
+        "PROJ_NAME",
+        "BUDGET_HRS"
+      ]
     }
   ]
 }

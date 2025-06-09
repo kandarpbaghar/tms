@@ -81,7 +81,7 @@
       "size": "6",
       "key": false,
       "description": "",
-      "sequence": 10
+      "sequence": 3
     },
     {
       "column_name": "MIN_TEAM_SIZE",
@@ -105,7 +105,7 @@
       "size": "5,2",
       "key": false,
       "description": "",
-      "sequence": 13
+      "sequence": 5
     },
     {
       "column_name": "CONSUMED_HRS",
@@ -113,7 +113,7 @@
       "size": "6",
       "key": false,
       "description": "",
-      "sequence": 14
+      "sequence": 4
     },
     {
       "column_name": "ADD_DATE",

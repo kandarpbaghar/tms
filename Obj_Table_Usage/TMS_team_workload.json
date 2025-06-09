@@ -1,0 +1,21 @@
+{
+  "object_name": "TMS_team_workload",
+  "tables": {
+    "PROJECTS": [
+      "COMPLETION_PCT",
+      "CONSUMED_HRS",
+      "PROJ_ID",
+      "PROJ_NAME",
+      "BUDGET_HRS"
+    ],
+    "PROJECT_TEAM": [
+      "PROJ_ID",
+      "LINE_NO",
+      "EMP_ID"
+    ],
+    "EMPLOYEES": [
+      "EMP_NAME",
+      "EMP_ID"
+    ]
+  }
+}

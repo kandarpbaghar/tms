@@ -1,0 +1,330 @@
+{
+  "transaction": {
+    "obj_name": "TMS_team_workload",
+    "sql_models": [
+      {
+        "sql_model": {
+          "form_title": "Team Workload",
+          "form_descr": "Team workload management interface",
+          "columns": [
+            {
+              "column": {
+                "name": "PROJ_ID",
+                "group_name": "Basic",
+                "col_type": "CHAR",
+                "heading": "Project ID",
+                "descr": "Project identifier",
+                "key": true,
+                "mandatory": "true",
+                "validations": [
+                  "must_exist_in('PROJECTS')"
+                ],
+                "lookup": "PROJECTS(PROJ_NAME, PROJ_ID)",
+                "item_change": "business_logic('get_project_details','fetch project details including budget hours, consumed hours and team size')",
+                "x": "10",
+                "y": "10",
+                "col_id": "1",
+                "db_name": "PROJ_ID",
+                "table_name": "PROJECTS",
+                "table_display_name": "Project master",
+                "db_size": "10",
+                "width": 100,
+                "hidden": "",
+                "format": "",
+                "default_function": "",
+                "default_value": "",
+                "expression": "",
+                "edit_mask": "",
+                "protect": ""
+              }
+            },
+            {
+              "column": {
+                "name": "PROJ_NAME",
+                "db_name": "PROJ_NAME",
+                "table_name": "PROJECTS",
+                "group_name": "Basic",
+                "col_type": "VARCHAR",
+                "heading": "Project Name",
+                "protect": "1",
+                "x": "20",
+                "y": "20",
+                "col_id": "2",
+                "table_display_name": "Project master",
+                "db_size": "100",
+                "width": 500,
+                "key": false,
+                "mandatory": false,
+                "hidden": "",
+                "descr": "",
+                "format": "",
+                "default_function": "",
+                "default_value": "",
+                "expression": "",
+                "edit_mask": "",
+                "validations": "",
+                "lookup": ""
+              }
+            },
+            {
+              "column": {
+                "name": "BUDGET_HRS",
+                "db_name": "BUDGET_HRS",
+                "table_name": "PROJECTS",
+                "group_name": "Capacity",
+                "col_type": "NUMBER",
+                "heading": "Budget Hours",
+                "protect": "1",
+                "x": "30",
+                "y": "30",
+                "col_id": "3",
+                "table_display_name": "Project master",
+                "db_size": "6",
+                "width": 60,
+                "key": false,
+                "mandatory": false,
+                "hidden": "",
+                "descr": "",
+                "format": "",
+                "default_function": "",
+                "default_value": "",
+                "expression": "",
+                "edit_mask": "",
+                "validations": "",
+                "lookup": ""
+              }
+            },
+            {
+              "column": {
+                "name": "CONSUMED_HRS",
+                "db_name": "CONSUMED_HRS",
+                "table_name": "PROJECTS",
+                "group_name": "Capacity",
+                "col_type": "NUMBER",
+                "heading": "Consumed Hours",
+                "protect": "1",
+                "x": "40",
+                "y": "40",
+                "col_id": "4",
+                "table_display_name": "Project master",
+                "db_size": "6",
+                "width": 60,
+                "key": false,
+                "mandatory": false,
+                "hidden": "",
+                "descr": "",
+                "format": "",
+                "default_function": "",
+                "default_value": "",
+                "expression": "",
+                "edit_mask": "",
+                "validations": "",
+                "lookup": ""
+              }
+            },
+            {
+              "column": {
+                "name": "COMPLETION_PCT",
+                "db_name": "COMPLETION_PCT",
+                "table_name": "PROJECTS",
+                "group_name": "Progress",
+                "col_type": "NUMBER",
+                "heading": "Completion %",
+                "protect": "1",
+                "x": "50",
+                "y": "50",
+                "col_id": "5",
+                "table_display_name": "Project master",
+                "db_size": "5,2",
+                "width": 60,
+                "key": false,
+                "mandatory": false,
+                "hidden": "",
+                "descr": "",
+                "format": "",
+                "default_function": "",
+                "default_value": "",
+                "expression": "",
+                "edit_mask": "",
+                "validations": "",
+                "lookup": ""
+              }
+            }
+          ],
+          "joins": {
+            "join_predicates": {
+              "joins": [
+                {
+                  "table": "PROJECTS",
+                  "main_table": true,
+                  "table_descr": "Project master"
+                }
+              ]
+            }
+          },
+          "form_no": "1"
+        }
+      },
+      {
+        "sql_model": {
+          "form_title": "Team Members",
+          "form_descr": "Project team members allocation",
+          "columns": [
+            {
+              "column": {
+                "name": "PROJ_ID",
+                "group_name": "Basic",
+                "col_type": "CHAR",
+                "heading": "Project ID",
+                "key": true,
+                "hidden": "1",
+                "x": "10",
+                "y": "10",
+                "col_id": "1",
+                "db_name": "PROJ_ID",
+                "table_name": "PROJECT_TEAM",
+                "table_display_name": "Project team members",
+                "db_size": "10",
+                "width": 100,
+                "mandatory": false,
+                "descr": "",
+                "format": "",
+                "default_function": "",
+                "default_value": "",
+                "expression": "",
+                "edit_mask": "",
+                "protect": "",
+                "validations": "",
+                "lookup": ""
+              }
+            },
+            {
+              "column": {
+                "name": "LINE_NO",
+                "group_name": "Basic",
+                "col_type": "NUMBER",
+                "heading": "Line No",
+                "key": true,
+                "default_value": "auto_generate()",
+                "x": "20",
+                "y": "20",
+                "col_id": "2",
+                "db_name": "LINE_NO",
+                "table_name": "PROJECT_TEAM",
+                "table_display_name": "Project team members",
+                "db_size": "4",
+                "width": 50,
+                "mandatory": false,
+                "hidden": "",
+                "descr": "",
+                "format": "",
+                "default_function": "",
+                "expression": "",
+                "edit_mask": "",
+                "protect": "",
+                "validations": "",
+                "lookup": ""
+              }
+            },
+            {
+              "column": {
+                "name": "EMP_ID",
+                "group_name": "Basic",
+                "col_type": "CHAR",
+                "heading": "Employee ID",
+                "mandatory": "true",
+                "validations": [
+                  "must_exist_in('EMPLOYEES')"
+                ],
+                "lookup": "EMPLOYEES(EMP_NAME, EMP_ID)",
+                "item_change": "business_logic('get_employee_skills','fetch employee skills and current workload')",
+                "x": "30",
+                "y": "30",
+                "col_id": "3",
+                "db_name": "EMP_ID",
+                "table_name": "PROJECT_TEAM",
+                "table_display_name": "Project team members",
+                "db_size": "10",
+                "width": 100,
+                "key": false,
+                "hidden": "",
+                "descr": "",
+                "format": "",
+                "default_function": "",
+                "default_value": "",
+                "expression": "",
+                "edit_mask": "",
+                "protect": ""
+              }
+            },
+            {
+              "column": {
+                "name": "EMP_NAME",
+                "db_name": "EMP_NAME",
+                "table_name": "EMPLOYEES",
+                "group_name": "Basic",
+                "col_type": "VARCHAR",
+                "heading": "Employee Name",
+                "protect": "1",
+                "x": "40",
+                "y": "40",
+                "col_id": "4",
+                "table_display_name": "Employee master",
+                "db_size": "100",
+                "width": 500,
+                "key": false,
+                "mandatory": false,
+                "hidden": "",
+                "descr": "",
+                "format": "",
+                "default_function": "",
+                "default_value": "",
+                "expression": "",
+                "edit_mask": "",
+                "validations": "",
+                "lookup": ""
+              }
+            }
+          ],
+          "joins": {
+            "join_predicates": {
+              "joins": [
+                {
+                  "table": "PROJECT_TEAM",
+                  "main_table": true,
+                  "table_descr": "Project team members"
+                },
+                {
+                  "table": "EMPLOYEES",
+                  "main_table": false,
+                  "table_descr": "Employee master",
+                  "column": "EMP_ID",
+                  "join_table": "PROJECT_TEAM",
+                  "join_column": "EMP_ID",
+                  "join_type": "inner"
+                }
+              ]
+            }
+          },
+          "form_no": "2"
+        }
+      }
+    ],
+    "actions": [
+      "add",
+      "edit",
+      "show-capacity:report_layout('team_capacity_report','Show team capacity utilization with allocated hours vs available hours')",
+      "reassign-tasks:business_logic('reassign_team_tasks','Reassign tasks between team members based on workload and skills')",
+      "update-skills:business_logic('update_employee_skills','Update skills matrix for team members')",
+      "print:report_layout('team_workload_report','Print detailed workload report with team allocation and capacity')"
+    ],
+    "cross_updates": [
+      "business_logic('update_project_team_count','Update team size count in PROJECTS table')",
+      "business_logic('update_capacity_utilization','Update capacity utilization metrics in PROJECTS table')"
+    ],
+    "follow_up_actions": [
+      "on-add-edit,trigger_email:email(to(get_role('project-manager'),'loginID'),'team_change_notification','Include team member changes details')",
+      "on-add-edit,execute:business_logic('recalculate_project_metrics','Recalculate project metrics based on team changes')"
+    ]
+  }
+}

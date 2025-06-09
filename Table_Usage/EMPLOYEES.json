@@ -28,6 +28,20 @@
         "join_table": "PROJECT_TEAM",
         "join_column": "EMP_ID"
       }
+    },
+    {
+      "object_name": "TMS_team_workload",
+      "form_no": "2",
+      "usage_type": "M",
+      "referred_columns": [
+        "EMP_NAME",
+        "EMP_ID"
+      ],
+      "join_info": {
+        "column": "EMP_ID",
+        "join_table": "PROJECT_TEAM",
+        "join_column": "EMP_ID"
+      }
     }
   ]
 }
