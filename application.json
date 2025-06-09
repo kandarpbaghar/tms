@@ -1,7 +1,7 @@
 {
   "application": {
     "id": "TMS",
-    "title": "Task Management System",
+    "title": "Task Management System - Version 1",
     "description": "Enterprise Task Management Application with Project and Team Management capabilities",
     "icon": "task_alt",
     "theme_color": "#2196f3",
