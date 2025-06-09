@@ -18,7 +18,8 @@
       "obj_name": "",
       "obj_type": "-",
       "menu_path": "TMS.1",
-      "functional_specs": ""
+      "functional_specs": "",
+      "order": 0
     },
     {
       "id": "1.1",
@@ -40,7 +41,8 @@
       "obj_name": "",
       "obj_type": "-",
       "menu_path": "TMS.2",
-      "functional_specs": ""
+      "functional_specs": "",
+      "order": 2
     },
     {
       "id": "2.1",
@@ -62,7 +64,8 @@
       "obj_name": "",
       "obj_type": "-",
       "menu_path": "TMS.3",
-      "functional_specs": ""
+      "functional_specs": "",
+      "order": 3
     },
     {
       "id": "3.1",
@@ -84,7 +87,8 @@
       "obj_name": "",
       "obj_type": "-",
       "menu_path": "TMS.4",
-      "functional_specs": ""
+      "functional_specs": "",
+      "order": 1
     },
     {
       "id": "4.1",
@@ -117,7 +121,8 @@
       "obj_name": "",
       "obj_type": "-",
       "menu_path": "TMS.5",
-      "functional_specs": ""
+      "functional_specs": "",
+      "order": 4
     },
     {
       "id": "5.1",
