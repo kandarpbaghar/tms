@@ -1,0 +1,40 @@
+{
+  "object_name": "TMS_project_setup",
+  "tables": {
+    "PROJECTS": [
+      "ADD_DATE",
+      "DESCRIPTION",
+      "END_DATE",
+      "MIN_TEAM_SIZE",
+      "CHG_DATE",
+      "PROJ_ID",
+      "COMPLETION_PCT",
+      "BUDGET_HRS",
+      "CONSUMED_HRS",
+      "MAX_TEAM_SIZE",
+      "ADD_TERM",
+      "CLIENT_ID",
+      "STATUS",
+      "CHG_TERM",
+      "ADD_USER",
+      "PROJ_NAME",
+      "CHG_USER",
+      "PROJ_MGR_ID",
+      "START_DATE",
+      "PRIORITY"
+    ],
+    "EMPLOYEES": [
+      "EMP_ID",
+      "EMP_NAME"
+    ],
+    "DEPARTMENTS": [
+      "DEPT_ID",
+      "DEPT_NAME"
+    ],
+    "PROJECT_TEAM": [
+      "PROJ_ID",
+      "EMP_ID",
+      "LINE_NO"
+    ]
+  }
+}

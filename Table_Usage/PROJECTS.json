@@ -1,0 +1,37 @@
+{
+  "table_name": "PROJECTS",
+  "objects": [
+    {
+      "object_name": "TMS_project_setup",
+      "form_no": "1",
+      "usage_type": "R",
+      "referred_columns": [
+        "ADD_DATE",
+        "DESCRIPTION",
+        "END_DATE",
+        "MIN_TEAM_SIZE",
+        "CHG_DATE",
+        "PROJ_ID",
+        "COMPLETION_PCT",
+        "MAX_TEAM_SIZE",
+        "CONSUMED_HRS",
+        "BUDGET_HRS",
+        "ADD_TERM",
+        "CLIENT_ID",
+        "STATUS",
+        "CHG_TERM",
+        "ADD_USER",
+        "PROJ_NAME",
+        "CHG_USER",
+        "PROJ_MGR_ID",
+        "START_DATE",
+        "PRIORITY"
+      ],
+      "join_info": {
+        "column": "CLIENT_ID",
+        "join_table": "DEPARTMENTS",
+        "join_column": "DEPT_ID"
+      }
+    }
+  ]
+}

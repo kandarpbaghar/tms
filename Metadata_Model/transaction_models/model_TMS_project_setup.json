@@ -1,0 +1,889 @@
+{
+  "transaction": {
+    "obj_name": "TMS_project_setup",
+    "sql_models": [
+      {
+        "sql_model": {
+          "form_title": "Project Setup",
+          "form_descr": "Project creation and configuration form",
+          "columns": [
+            {
+              "column": {
+                "name": "PROJ_ID",
+                "col_type": "CHAR",
+                "group_name": "Others",
+                "heading": "Project ID",
+                "descr": "Unique project identifier",
+                "key": true,
+                "default_value": "auto_generate()",
+                "protect": "1",
+                "mandatory": "true",
+                "x": "140",
+                "y": "140",
+                "col_id": "1",
+                "db_name": "PROJ_ID",
+                "table_name": "PROJECTS",
+                "table_display_name": "Project master",
+                "db_size": "10",
+                "width": 100,
+                "hidden": "",
+                "format": "",
+                "default_function": "",
+                "expression": "",
+                "edit_mask": "",
+                "validations": "",
+                "lookup": ""
+              }
+            },
+            {
+              "column": {
+                "name": "PROJ_NAME",
+                "col_type": "VARCHAR",
+                "group_name": "Basic Information",
+                "heading": "Project Name",
+                "descr": "Name of the project",
+                "mandatory": "true",
+                "validations": [
+                  "expression('!(/[^a-zA-Z0-9-_]/g).test(value)')"
+                ],
+                "x": "10",
+                "y": "10",
+                "col_id": "2",
+                "db_name": "PROJ_NAME",
+                "table_name": "PROJECTS",
+                "table_display_name": "Project master",
+                "db_size": "100",
+                "width": 500,
+                "key": false,
+                "hidden": "",
+                "format": "",
+                "default_function": "",
+                "default_value": "",
+                "expression": "",
+                "edit_mask": "",
+                "protect": "",
+                "lookup": ""
+              }
+            },
+            {
+              "column": {
+                "name": "DESCRIPTION",
+                "col_type": "VARCHAR",
+                "group_name": "Basic Information",
+                "heading": "Description",
+                "descr": "Project description",
+                "mandatory": "true",
+                "x": "20",
+                "y": "20",
+                "col_id": "3",
+                "db_name": "DESCRIPTION",
+                "table_name": "PROJECTS",
+                "table_display_name": "Project master",
+                "db_size": "500",
+                "width": 500,
+                "key": false,
+                "hidden": "",
+                "format": "",
+                "default_function": "",
+                "default_value": "",
+                "expression": "",
+                "edit_mask": "",
+                "protect": "",
+                "validations": "",
+                "lookup": ""
+              }
+            },
+            {
+              "column": {
+                "name": "START_DATE",
+                "col_type": "DATE",
+                "group_name": "Basic Information",
+                "heading": "Start Date",
+                "descr": "Project start date",
+                "mandatory": "true",
+                "validations": [
+                  "expression('value >= today()')"
+                ],
+                "x": "30",
+                "y": "30",
+                "col_id": "4",
+                "db_name": "START_DATE",
+                "table_name": "PROJECTS",
+                "table_display_name": "Project master",
+                "db_size": "",
+                "width": 50,
+                "key": false,
+                "hidden": "",
+                "format": "",
+                "default_function": "",
+                "default_value": "",
+                "expression": "",
+                "edit_mask": "",
+                "protect": "",
+                "lookup": ""
+              }
+            },
+            {
+              "column": {
+                "name": "END_DATE",
+                "col_type": "DATE",
+                "group_name": "Basic Information",
+                "heading": "End Date",
+                "descr": "Project end date",
+                "mandatory": "true",
+                "validations": [
+                  "expression('value > START_DATE')"
+                ],
+                "x": "40",
+                "y": "40",
+                "col_id": "5",
+                "db_name": "END_DATE",
+                "table_name": "PROJECTS",
+                "table_display_name": "Project master",
+                "db_size": "",
+                "width": 50,
+                "key": false,
+                "hidden": "",
+                "format": "",
+                "default_function": "",
+                "default_value": "",
+                "expression": "",
+                "edit_mask": "",
+                "protect": "",
+                "lookup": ""
+              }
+            },
+            {
+              "column": {
+                "name": "PROJ_MGR_ID",
+                "col_type": "CHAR",
+                "group_name": "Basic Information",
+                "heading": "Project Manager",
+                "descr": "Project manager employee id",
+                "mandatory": "true",
+                "lookup": "EMPLOYEES(EMP_NAME, EMP_ID)",
+                "validations": [
+                  "must_exist_in('EMPLOYEES')",
+                  "business_logic('check_pm_role', 'Verify employee has Project Manager role')"
+                ],
+                "x": "50",
+                "y": "50",
+                "col_id": "6",
+                "db_name": "PROJ_MGR_ID",
+                "table_name": "PROJECTS",
+                "table_display_name": "Project master",
+                "db_size": "10",
+                "width": 100,
+                "key": false,
+                "hidden": "",
+                "format": "",
+                "default_function": "",
+                "default_value": "",
+                "expression": "",
+                "edit_mask": "",
+                "protect": ""
+              }
+            },
+            {
+              "column": {
+                "name": "PROJ_MGR_NAME",
+                "db_name": "EMP_NAME",
+                "table_name": "EMPLOYEES",
+                "col_type": "VARCHAR",
+                "group_name": "Basic Information",
+                "heading": "Manager Name",
+                "protect": "1",
+                "x": "60",
+                "y": "60",
+                "col_id": "7",
+                "table_display_name": "Employee master",
+                "db_size": "100",
+                "width": 500,
+                "key": false,
+                "mandatory": false,
+                "hidden": "",
+                "descr": "",
+                "format": "",
+                "default_function": "",
+                "default_value": "",
+                "expression": "",
+                "edit_mask": "",
+                "validations": "",
+                "lookup": ""
+              }
+            },
+            {
+              "column": {
+                "name": "STATUS",
+                "col_type": "CHAR",
+                "group_name": "Basic Information",
+                "heading": "Status",
+                "edit_mask": {
+                  "mask": "ddlb",
+                  "values": [
+                    {
+                      "data": "P",
+                      "display": "Planning"
+                    },
+                    {
+                      "data": "A",
+                      "display": "Active"
+                    },
+                    {
+                      "data": "H",
+                      "display": "On Hold"
+                    },
+                    {
+                      "data": "C",
+                      "display": "Completed"
+                    }
+                  ]
+                },
+                "default_value": "P",
+                "mandatory": "true",
+                "validations": [
+                  "must_be_in('P,A,H,C')",
+                  "business_logic('check_completion_status','Verify no active tasks exist when status is Completed')"
+                ],
+                "x": "70",
+                "y": "70",
+                "col_id": "8",
+                "db_name": "STATUS",
+                "table_name": "PROJECTS",
+                "table_display_name": "Project master",
+                "db_size": "1",
+                "width": 50,
+                "key": false,
+                "hidden": "",
+                "descr": "",
+                "format": "",
+                "default_function": "",
+                "expression": "",
+                "protect": "",
+                "lookup": ""
+              }
+            },
+            {
+              "column": {
+                "name": "PRIORITY",
+                "col_type": "CHAR",
+                "group_name": "Basic Information",
+                "heading": "Priority",
+                "edit_mask": {
+                  "mask": "ddlb",
+                  "values": [
+                    {
+                      "data": "H",
+                      "display": "High"
+                    },
+                    {
+                      "data": "M",
+                      "display": "Medium"
+                    },
+                    {
+                      "data": "L",
+                      "display": "Low"
+                    }
+                  ]
+                },
+                "default_value": "M",
+                "mandatory": "true",
+                "x": "80",
+                "y": "80",
+                "col_id": "9",
+                "db_name": "PRIORITY",
+                "table_name": "PROJECTS",
+                "table_display_name": "Project master",
+                "db_size": "1",
+                "width": 50,
+                "key": false,
+                "hidden": "",
+                "descr": "",
+                "format": "",
+                "default_function": "",
+                "expression": "",
+                "protect": "",
+                "validations": "",
+                "lookup": ""
+              }
+            },
+            {
+              "column": {
+                "name": "CLIENT_ID",
+                "col_type": "CHAR",
+                "group_name": "Basic Information",
+                "heading": "Client/Department",
+                "mandatory": "true",
+                "lookup": "DEPARTMENTS(DEPT_NAME, DEPT_ID)",
+                "validations": [
+                  "must_exist_in('DEPARTMENTS')"
+                ],
+                "x": "90",
+                "y": "90",
+                "col_id": "10",
+                "db_name": "CLIENT_ID",
+                "table_name": "PROJECTS",
+                "table_display_name": "Project master",
+                "db_size": "10",
+                "width": 100,
+                "key": false,
+                "hidden": "",
+                "descr": "",
+                "format": "",
+                "default_function": "",
+                "default_value": "",
+                "expression": "",
+                "edit_mask": "",
+                "protect": ""
+              }
+            },
+            {
+              "column": {
+                "name": "CLIENT_NAME",
+                "db_name": "DEPT_NAME",
+                "table_name": "DEPARTMENTS",
+                "col_type": "VARCHAR",
+                "group_name": "Basic Information",
+                "heading": "Client Name",
+                "protect": "1",
+                "x": "100",
+                "y": "100",
+                "col_id": "11",
+                "table_display_name": "Department master",
+                "db_size": "100",
+                "width": 500,
+                "key": false,
+                "mandatory": false,
+                "hidden": "",
+                "descr": "",
+                "format": "",
+                "default_function": "",
+                "default_value": "",
+                "expression": "",
+                "edit_mask": "",
+                "validations": "",
+                "lookup": ""
+              }
+            },
+            {
+              "column": {
+                "name": "BUDGET_HRS",
+                "col_type": "NUMBER",
+                "group_name": "Resource Planning",
+                "heading": "Budget Hours",
+                "mandatory": "true",
+                "default_value": "0",
+                "validations": [
+                  "expression('value > 0 && value <= 999999')",
+                  "business_logic('check_task_hours','Verify budget hours greater than sum of task estimated hours')"
+                ],
+                "x": "110",
+                "y": "110",
+                "col_id": "12",
+                "db_name": "BUDGET_HRS",
+                "table_name": "PROJECTS",
+                "table_display_name": "Project master",
+                "db_size": "6",
+                "width": 60,
+                "key": false,
+                "hidden": "",
+                "descr": "",
+                "format": "",
+                "default_function": "",
+                "expression": "",
+                "edit_mask": "",
+                "protect": "",
+                "lookup": ""
+              }
+            },
+            {
+              "column": {
+                "name": "MIN_TEAM_SIZE",
+                "col_type": "NUMBER",
+                "group_name": "Resource Planning",
+                "heading": "Min Team Size",
+                "default_value": "1",
+                "validations": [
+                  "expression('value > 0')"
+                ],
+                "x": "120",
+                "y": "120",
+                "col_id": "13",
+                "db_name": "MIN_TEAM_SIZE",
+                "table_name": "PROJECTS",
+                "table_display_name": "Project master",
+                "db_size": "3",
+                "width": 50,
+                "key": false,
+                "mandatory": false,
+                "hidden": "",
+                "descr": "",
+                "format": "",
+                "default_function": "",
+                "expression": "",
+                "edit_mask": "",
+                "protect": "",
+                "lookup": ""
+              }
+            },
+            {
+              "column": {
+                "name": "MAX_TEAM_SIZE",
+                "col_type": "NUMBER",
+                "group_name": "Resource Planning",
+                "heading": "Max Team Size",
+                "validations": [
+                  "expression('value >= MIN_TEAM_SIZE')"
+                ],
+                "x": "130",
+                "y": "130",
+                "col_id": "14",
+                "db_name": "MAX_TEAM_SIZE",
+                "table_name": "PROJECTS",
+                "table_display_name": "Project master",
+                "db_size": "3",
+                "width": 50,
+                "key": false,
+                "mandatory": false,
+                "hidden": "",
+                "descr": "",
+                "format": "",
+                "default_function": "",
+                "default_value": "",
+                "expression": "",
+                "edit_mask": "",
+                "protect": "",
+                "lookup": ""
+              }
+            },
+            {
+              "column": {
+                "name": "COMPLETION_PCT",
+                "col_type": "NUMBER",
+                "group_name": "Others",
+                "heading": "Completion %",
+                "protect": "1",
+                "default_value": "0",
+                "x": "150",
+                "y": "150",
+                "col_id": "15",
+                "db_name": "COMPLETION_PCT",
+                "table_name": "PROJECTS",
+                "table_display_name": "Project master",
+                "db_size": "5,2",
+                "width": 60,
+                "key": false,
+                "mandatory": false,
+                "hidden": "",
+                "descr": "",
+                "format": "",
+                "default_function": "",
+                "expression": "",
+                "edit_mask": "",
+                "validations": "",
+                "lookup": ""
+              }
+            },
+            {
+              "column": {
+                "name": "CONSUMED_HRS",
+                "col_type": "NUMBER",
+                "group_name": "Others",
+                "heading": "Consumed Hours",
+                "protect": "1",
+                "default_value": "0",
+                "x": "160",
+                "y": "160",
+                "col_id": "16",
+                "db_name": "CONSUMED_HRS",
+                "table_name": "PROJECTS",
+                "table_display_name": "Project master",
+                "db_size": "6",
+                "width": 60,
+                "key": false,
+                "mandatory": false,
+                "hidden": "",
+                "descr": "",
+                "format": "",
+                "default_function": "",
+                "expression": "",
+                "edit_mask": "",
+                "validations": "",
+                "lookup": ""
+              }
+            },
+            {
+              "column": {
+                "name": "ADD_DATE",
+                "col_type": "DATE",
+                "group_name": "Others",
+                "heading": "Created Date",
+                "protect": "1",
+                "default_value": "today()",
+                "x": "170",
+                "y": "170",
+                "col_id": "17",
+                "db_name": "ADD_DATE",
+                "table_name": "PROJECTS",
+                "table_display_name": "Project master",
+                "db_size": "",
+                "width": 50,
+                "key": false,
+                "mandatory": false,
+                "hidden": "",
+                "descr": "",
+                "format": "",
+                "default_function": "",
+                "expression": "",
+                "edit_mask": "",
+                "validations": "",
+                "lookup": ""
+              }
+            },
+            {
+              "column": {
+                "name": "ADD_USER",
+                "col_type": "CHAR",
+                "group_name": "Others",
+                "protect": "1",
+                "default_value": "logged_in_user()",
+                "x": "180",
+                "y": "180",
+                "col_id": "18",
+                "db_name": "ADD_USER",
+                "table_name": "PROJECTS",
+                "table_display_name": "Project master",
+                "db_size": "10",
+                "width": 100,
+                "key": false,
+                "mandatory": false,
+                "hidden": "",
+                "heading": "",
+                "descr": "",
+                "format": "",
+                "default_function": "",
+                "expression": "",
+                "edit_mask": "",
+                "validations": "",
+                "lookup": ""
+              }
+            },
+            {
+              "column": {
+                "name": "ADD_TERM",
+                "col_type": "VARCHAR",
+                "group_name": "Others",
+                "protect": "1",
+                "default_value": "logged_in_terminal()",
+                "x": "190",
+                "y": "190",
+                "col_id": "19",
+                "db_name": "ADD_TERM",
+                "table_name": "PROJECTS",
+                "table_display_name": "Project master",
+                "db_size": "15",
+                "width": 150,
+                "key": false,
+                "mandatory": false,
+                "hidden": "",
+                "heading": "",
+                "descr": "",
+                "format": "",
+                "default_function": "",
+                "expression": "",
+                "edit_mask": "",
+                "validations": "",
+                "lookup": ""
+              }
+            },
+            {
+              "column": {
+                "name": "CHG_DATE",
+                "col_type": "DATE",
+                "group_name": "Others",
+                "protect": "1",
+                "x": "200",
+                "y": "200",
+                "col_id": "20",
+                "db_name": "CHG_DATE",
+                "table_name": "PROJECTS",
+                "table_display_name": "Project master",
+                "db_size": "",
+                "width": 50,
+                "key": false,
+                "mandatory": false,
+                "hidden": "",
+                "heading": "",
+                "descr": "",
+                "format": "",
+                "default_function": "",
+                "default_value": "",
+                "expression": "",
+                "edit_mask": "",
+                "validations": "",
+                "lookup": ""
+              }
+            },
+            {
+              "column": {
+                "name": "CHG_USER",
+                "col_type": "CHAR",
+                "group_name": "Others",
+                "protect": "1",
+                "x": "210",
+                "y": "210",
+                "col_id": "21",
+                "db_name": "CHG_USER",
+                "table_name": "PROJECTS",
+                "table_display_name": "Project master",
+                "db_size": "10",
+                "width": 100,
+                "key": false,
+                "mandatory": false,
+                "hidden": "",
+                "heading": "",
+                "descr": "",
+                "format": "",
+                "default_function": "",
+                "default_value": "",
+                "expression": "",
+                "edit_mask": "",
+                "validations": "",
+                "lookup": ""
+              }
+            },
+            {
+              "column": {
+                "name": "CHG_TERM",
+                "col_type": "VARCHAR",
+                "group_name": "Others",
+                "protect": "1",
+                "x": "220",
+                "y": "220",
+                "col_id": "22",
+                "db_name": "CHG_TERM",
+                "table_name": "PROJECTS",
+                "table_display_name": "Project master",
+                "db_size": "15",
+                "width": 150,
+                "key": false,
+                "mandatory": false,
+                "hidden": "",
+                "heading": "",
+                "descr": "",
+                "format": "",
+                "default_function": "",
+                "default_value": "",
+                "expression": "",
+                "edit_mask": "",
+                "validations": "",
+                "lookup": ""
+              }
+            }
+          ],
+          "joins": {
+            "join_predicates": {
+              "joins": [
+                {
+                  "table": "PROJECTS",
+                  "main_table": true,
+                  "table_descr": "Project master"
+                },
+                {
+                  "table": "EMPLOYEES",
+                  "main_table": false,
+                  "table_descr": "Employee master",
+                  "column": "EMP_ID",
+                  "join_table": "PROJECTS",
+                  "join_column": "PROJ_MGR_ID",
+                  "join_type": "inner"
+                },
+                {
+                  "table": "DEPARTMENTS",
+                  "main_table": false,
+                  "table_descr": "Department master",
+                  "column": "DEPT_ID",
+                  "join_table": "PROJECTS",
+                  "join_column": "CLIENT_ID",
+                  "join_type": "inner"
+                }
+              ]
+            }
+          },
+          "form_no": "1"
+        }
+      },
+      {
+        "sql_model": {
+          "form_title": "Team Members",
+          "form_descr": "Project team members",
+          "columns": [
+            {
+              "column": {
+                "name": "PROJ_ID",
+                "col_type": "CHAR",
+                "group_name": "Basic",
+                "key": true,
+                "hidden": "1",
+                "mandatory": "true",
+                "x": "10",
+                "y": "10",
+                "col_id": "1",
+                "db_name": "PROJ_ID",
+                "table_name": "PROJECT_TEAM",
+                "table_display_name": "Project team members",
+                "db_size": "10",
+                "width": 100,
+                "heading": "",
+                "descr": "",
+                "format": "",
+                "default_function": "",
+                "default_value": "",
+                "expression": "",
+                "edit_mask": "",
+                "protect": "",
+                "validations": "",
+                "lookup": ""
+              }
+            },
+            {
+              "column": {
+                "name": "LINE_NO",
+                "col_type": "NUMBER",
+                "group_name": "Basic",
+                "key": true,
+                "mandatory": "true",
+                "x": "20",
+                "y": "20",
+                "col_id": "2",
+                "db_name": "LINE_NO",
+                "table_name": "PROJECT_TEAM",
+                "table_display_name": "Project team members",
+                "db_size": "4",
+                "width": 50,
+                "hidden": "",
+                "heading": "",
+                "descr": "",
+                "format": "",
+                "default_function": "",
+                "default_value": "",
+                "expression": "",
+                "edit_mask": "",
+                "protect": "",
+                "validations": "",
+                "lookup": ""
+              }
+            },
+            {
+              "column": {
+                "name": "EMP_ID",
+                "col_type": "CHAR",
+                "group_name": "Basic",
+                "heading": "Employee",
+                "mandatory": "true",
+                "lookup": "EMPLOYEES(EMP_NAME, EMP_ID)",
+                "validations": [
+                  "must_exist_in('EMPLOYEES')",
+                  "business_logic('check_team_size','Verify team size within limits')",
+                  "business_logic('check_not_pm','Employee cannot be project manager')"
+                ],
+                "x": "30",
+                "y": "30",
+                "col_id": "3",
+                "db_name": "EMP_ID",
+                "table_name": "PROJECT_TEAM",
+                "table_display_name": "Project team members",
+                "db_size": "10",
+                "width": 100,
+                "key": false,
+                "hidden": "",
+                "descr": "",
+                "format": "",
+                "default_function": "",
+                "default_value": "",
+                "expression": "",
+                "edit_mask": "",
+                "protect": ""
+              }
+            },
+            {
+              "column": {
+                "name": "EMP_NAME",
+                "db_name": "EMP_NAME",
+                "table_name": "EMPLOYEES",
+                "col_type": "VARCHAR",
+                "group_name": "Basic",
+                "heading": "Name",
+                "protect": "1",
+                "x": "40",
+                "y": "40",
+                "col_id": "4",
+                "table_display_name": "Employee master",
+                "db_size": "100",
+                "width": 500,
+                "key": false,
+                "mandatory": false,
+                "hidden": "",
+                "descr": "",
+                "format": "",
+                "default_function": "",
+                "default_value": "",
+                "expression": "",
+                "edit_mask": "",
+                "validations": "",
+                "lookup": ""
+              }
+            }
+          ],
+          "joins": {
+            "join_predicates": {
+              "joins": [
+                {
+                  "table": "PROJECT_TEAM",
+                  "main_table": true,
+                  "table_descr": "Project team members"
+                },
+                {
+                  "table": "EMPLOYEES",
+                  "main_table": false,
+                  "table_descr": "Employee master",
+                  "column": "EMP_ID",
+                  "join_table": "PROJECT_TEAM",
+                  "join_column": "EMP_ID",
+                  "join_type": "inner"
+                }
+              ]
+            }
+          },
+          "form_no": "2"
+        }
+      }
+    ],
+    "actions": [
+      "add",
+      "edit",
+      "create-project:business_logic('create_project','Create project record and initialize workspace')",
+      "archive-project:business_logic('archive_project','Archive completed project and generate closure report')",
+      "associate-tasks:business_logic('link_tasks','Link existing tasks to project and update metrics')",
+      "default-data:business_logic('load_template','Load project template data')"
+    ],
+    "cross_updates": [
+      "business_logic('update_resource_allocation','Update resource allocation tables')",
+      "business_logic('update_task_assignments','Update task assignments')",
+      "business_logic('update_project_metrics','Update project metrics')",
+      "business_logic('update_dept_capacity','Update department capacity')"
+    ],
+    "attach_docs": [
+      "Project Charter",
+      "Project Plan",
+      "Team Structure",
+      "Client Requirements"
+    ],
+    "follow_up_actions": [
+      "on-add,trigger_email:email(to('PROJ_MGR_ID'),'project_creation','Project creation notification with setup details')",
+      "on-add,business_logic('schedule_kickoff','Schedule project kickoff meeting')",
+      "on-add,business_logic('create_milestones','Create default project milestones')",
+      "on-add,business_logic('setup_workspace','Initialize project workspace and communication channels')"
+    ]
+  }
+}

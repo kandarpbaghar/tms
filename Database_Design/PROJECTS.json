@@ -1,0 +1,167 @@
+{
+  "table_name": "PROJECTS",
+  "table_description": "",
+  "project": "TMS",
+  "columns": [
+    {
+      "column_name": "PROJ_ID",
+      "data_type": "CHAR",
+      "size": "10",
+      "key": true,
+      "description": "Unique project identifier",
+      "sequence": 1
+    },
+    {
+      "column_name": "PROJ_NAME",
+      "data_type": "VARCHAR",
+      "size": "100",
+      "key": false,
+      "description": "Name of the project",
+      "sequence": 2
+    },
+    {
+      "column_name": "DESCRIPTION",
+      "data_type": "VARCHAR",
+      "size": "500",
+      "key": false,
+      "description": "Project description",
+      "sequence": 3
+    },
+    {
+      "column_name": "START_DATE",
+      "data_type": "DATE",
+      "size": "",
+      "key": false,
+      "description": "Project start date",
+      "sequence": 4
+    },
+    {
+      "column_name": "END_DATE",
+      "data_type": "DATE",
+      "size": "",
+      "key": false,
+      "description": "Project end date",
+      "sequence": 5
+    },
+    {
+      "column_name": "PROJ_MGR_ID",
+      "data_type": "CHAR",
+      "size": "10",
+      "key": false,
+      "description": "Project manager employee id",
+      "sequence": 6
+    },
+    {
+      "column_name": "STATUS",
+      "data_type": "CHAR",
+      "size": "1",
+      "key": false,
+      "description": "",
+      "sequence": 7
+    },
+    {
+      "column_name": "PRIORITY",
+      "data_type": "CHAR",
+      "size": "1",
+      "key": false,
+      "description": "",
+      "sequence": 8
+    },
+    {
+      "column_name": "CLIENT_ID",
+      "data_type": "CHAR",
+      "size": "10",
+      "key": false,
+      "description": "",
+      "sequence": 9
+    },
+    {
+      "column_name": "BUDGET_HRS",
+      "data_type": "NUMBER",
+      "size": "6",
+      "key": false,
+      "description": "",
+      "sequence": 10
+    },
+    {
+      "column_name": "MIN_TEAM_SIZE",
+      "data_type": "NUMBER",
+      "size": "3",
+      "key": false,
+      "description": "",
+      "sequence": 11
+    },
+    {
+      "column_name": "MAX_TEAM_SIZE",
+      "data_type": "NUMBER",
+      "size": "3",
+      "key": false,
+      "description": "",
+      "sequence": 12
+    },
+    {
+      "column_name": "COMPLETION_PCT",
+      "data_type": "NUMBER",
+      "size": "5,2",
+      "key": false,
+      "description": "",
+      "sequence": 13
+    },
+    {
+      "column_name": "CONSUMED_HRS",
+      "data_type": "NUMBER",
+      "size": "6",
+      "key": false,
+      "description": "",
+      "sequence": 14
+    },
+    {
+      "column_name": "ADD_DATE",
+      "data_type": "DATE",
+      "size": "",
+      "key": false,
+      "description": "",
+      "sequence": 15
+    },
+    {
+      "column_name": "ADD_USER",
+      "data_type": "CHAR",
+      "size": "10",
+      "key": false,
+      "description": "",
+      "sequence": 16
+    },
+    {
+      "column_name": "ADD_TERM",
+      "data_type": "VARCHAR",
+      "size": "15",
+      "key": false,
+      "description": "",
+      "sequence": 17
+    },
+    {
+      "column_name": "CHG_DATE",
+      "data_type": "DATE",
+      "size": "",
+      "key": false,
+      "description": "",
+      "sequence": 18
+    },
+    {
+      "column_name": "CHG_USER",
+      "data_type": "CHAR",
+      "size": "10",
+      "key": false,
+      "description": "",
+      "sequence": 19
+    },
+    {
+      "column_name": "CHG_TERM",
+      "data_type": "VARCHAR",
+      "size": "15",
+      "key": false,
+      "description": "",
+      "sequence": 20
+    }
+  ]
+}

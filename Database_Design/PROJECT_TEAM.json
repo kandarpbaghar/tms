@@ -1,0 +1,31 @@
+{
+  "table_name": "PROJECT_TEAM",
+  "table_description": "",
+  "project": "TMS",
+  "columns": [
+    {
+      "column_name": "PROJ_ID",
+      "data_type": "CHAR",
+      "size": "10",
+      "key": true,
+      "description": "",
+      "sequence": 1
+    },
+    {
+      "column_name": "LINE_NO",
+      "data_type": "NUMBER",
+      "size": "4",
+      "key": true,
+      "description": "",
+      "sequence": 2
+    },
+    {
+      "column_name": "EMP_ID",
+      "data_type": "CHAR",
+      "size": "10",
+      "key": false,
+      "description": "",
+      "sequence": 3
+    }
+  ]
+}

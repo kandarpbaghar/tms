@@ -1,0 +1,23 @@
+{
+  "table_name": "DEPARTMENTS",
+  "table_description": "",
+  "project": "TMS",
+  "columns": [
+    {
+      "column_name": "DEPT_ID",
+      "data_type": "CHAR",
+      "size": "10",
+      "key": true,
+      "description": "",
+      "sequence": 1
+    },
+    {
+      "column_name": "DEPT_NAME",
+      "data_type": "VARCHAR",
+      "size": "100",
+      "key": false,
+      "description": "",
+      "sequence": 2
+    }
+  ]
+}

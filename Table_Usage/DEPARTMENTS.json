@@ -1,0 +1,19 @@
+{
+  "table_name": "DEPARTMENTS",
+  "objects": [
+    {
+      "object_name": "TMS_project_setup",
+      "form_no": "1",
+      "usage_type": "R",
+      "referred_columns": [
+        "DEPT_ID",
+        "DEPT_NAME"
+      ],
+      "join_info": {
+        "column": "DEPT_ID",
+        "join_table": "PROJECTS",
+        "join_column": "CLIENT_ID"
+      }
+    }
+  ]
+}

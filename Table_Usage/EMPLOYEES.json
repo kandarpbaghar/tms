@@ -1,0 +1,33 @@
+{
+  "table_name": "EMPLOYEES",
+  "objects": [
+    {
+      "object_name": "TMS_project_setup",
+      "form_no": "1",
+      "usage_type": "M",
+      "referred_columns": [
+        "EMP_ID",
+        "EMP_NAME"
+      ],
+      "join_info": {
+        "column": "EMP_ID",
+        "join_table": "PROJECTS",
+        "join_column": "PROJ_MGR_ID"
+      }
+    },
+    {
+      "object_name": "TMS_project_setup",
+      "form_no": "2",
+      "usage_type": "R",
+      "referred_columns": [
+        "EMP_ID",
+        "EMP_NAME"
+      ],
+      "join_info": {
+        "column": "EMP_ID",
+        "join_table": "PROJECT_TEAM",
+        "join_column": "EMP_ID"
+      }
+    }
+  ]
+}

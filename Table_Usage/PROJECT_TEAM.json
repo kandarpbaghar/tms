@@ -1,0 +1,20 @@
+{
+  "table_name": "PROJECT_TEAM",
+  "objects": [
+    {
+      "object_name": "TMS_project_setup",
+      "form_no": "2",
+      "usage_type": "M",
+      "referred_columns": [
+        "PROJ_ID",
+        "EMP_ID",
+        "LINE_NO"
+      ],
+      "join_info": {
+        "column": "EMP_ID",
+        "join_table": "EMPLOYEES",
+        "join_column": "EMP_ID"
+      }
+    }
+  ]
+}
